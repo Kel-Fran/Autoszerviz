@@ -26,6 +26,7 @@
         {
             Rendszam = rendszam;
             Kor = kor;
+            KilometerOra = kilometerOra;
             UzemanyagSzint = uzemanyagSzint;
         }
 
