@@ -199,5 +199,24 @@ namespace Tesztek
             Assert.That(auto.KilometerOra, Is.EqualTo(190000));
             Assert.That(auto.AkkumulatorSzint, Is.EqualTo(70));
         }
+
+        // ---------------
+        // Tank tests
+        // ---------------
+
+        [Test]
+        public void Tank_AmmoIsBounded() {
+            Assert.That(new Tank("", 0, 0, 0, Tank.A_MAX + 1u).Ammo, Is.EqualTo(Tank.A_MAX));
+        }
+
+        [Test]
+        public void Tank_CtorAmmoArgGetsUsed() {
+            Assert.That(new Tank("", 0, 0, 0, 1).Ammo, Is.EqualTo(1));
+        }
+
+        [Test]
+        public void Tank_AmmoUpperBoundIsInclusive() {
+            Assert.That(new Tank("", 0, 0, 0, Tank.A_MAX).Ammo, Is.EqualTo(Tank.A_MAX));
+        }
     }
 }
